@@ -22,10 +22,10 @@ function Check(dataset)
     local length = dataset:size()
     for i=1,length do
         if __Check(dataset.data[i], dataset.label[i]) then correct = correct + 1 end
-        if i%5000 == 0 then print("Progress: " .. i) end
+        if i%5000 == 0 then print("Progress: " .. i .. '/' .. length) end
     end
     print("Check Finished! " .. correct .. "/" .. length)
     print("Accuracy: " .. 100*correct/length .. "%")
 end
 
-print('Function loaded: [prediction_index]Check(cnnet, testcase)')
+print('Function loaded: [prediction_index]Check(testcase)')

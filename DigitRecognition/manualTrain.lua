@@ -1,4 +1,4 @@
-MAX_ITERATION = 20
+MAX_ITERATION = 3
 LEARNING_RATE = 0.001
 NET_NAME = 'cnnet.t7'
 
@@ -27,7 +27,7 @@ function StartTrain()
     end
     print('FInished trainning!')
     torch.save(NET_NAME, net)
-    print('Net saved!')
+    print('Net saved!' .. 'File name: ' .. NET_NAME)
 end
 
 print('Function loaded: StartTrain()')

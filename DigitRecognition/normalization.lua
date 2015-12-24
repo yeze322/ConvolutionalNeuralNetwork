@@ -1,9 +1,9 @@
 mean = {} -- store the mean, to normalize the test set in the future
 stdv  = {} -- store the standard-deviation for the future
-
+CHANNEL_NUM = 3
 print('\nNormalizing...')
 -- 1 - trainset normalization
-for i=1,1 do
+for i=1,CHANNEL_NUM do
     mean[i] = trainset.data[{ {}, {i}, {}, {}  }]:mean() -- mean estimation
     print('Channel ' .. i .. ', Mean: ' .. mean[i])
     trainset.data[{ {}, {i}, {}, {}  }]:add(-mean[i]) -- mean subtraction
@@ -15,7 +15,7 @@ end
 
 
 -- 2 - testset normalization
-for i=1,1 do
+for i=1,CHANNEL_NUM do
     testset.data[{{},{i},{},{}}]:add(-mean[i])
     testset.data[{{},{i},{},{}}]:div(stdv[i])
 end
