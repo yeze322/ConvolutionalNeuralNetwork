@@ -1,3 +1,5 @@
+require 'xlua'
+
 MAX_ITERATION = 3
 LEARNING_RATE = 0.001
 NET_NAME = 'cnnet.t7'
@@ -20,8 +22,8 @@ function StartTrain()
     local losses = torch.Tensor(LEN)
     for iter=1, MAX_ITERATION do
         for i=1,LEN do
+            xlua.progress(i,Len)
             losses[i] = gradUpdate(trainset.data[i], trainset.label[i])
-            if i%2000 == 0 then print("Case " .. i .. "/" .. LEN) end
         end
         print("Iter: " .. iter, "Loss: " .. losses:mean())
     end
