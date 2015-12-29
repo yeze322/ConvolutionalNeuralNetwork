@@ -22,7 +22,7 @@ function StartTrain()
     local losses = torch.Tensor(LEN)
     for iter=1, MAX_ITERATION do
         for i=1,LEN do
-            xlua.progress(i,Len)
+            xlua.progress(i,LEN)
             losses[i] = gradUpdate(trainset.data[i], trainset.label[i])
         end
         print("Iter: " .. iter, "Loss: " .. losses:mean())

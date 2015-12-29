@@ -1,4 +1,4 @@
-This is a simple handwritten digit recognition project.
+This is a simple image classification CNN model.
 
 
 Developed under torch7, ubuntu 14.04.
