@@ -3,8 +3,8 @@ require 'math'
 
 -- data parameters
 CH_NUM = 3; -- channel number
-PIC_SIZE = 32; -- input square picture matrices' size
-OUT_PREDICT_NUM = 10; -- output predict result number
+PIC_SIZE = 36; -- input square picture matrices' size
+OUT_PREDICT_NUM = 6; -- output predict result number
 
 -- NN parameters
 FTMAP_NUM_1 = 6; -- number of feature maps in feature layer 1
